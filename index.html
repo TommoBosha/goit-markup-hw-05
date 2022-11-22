@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,9 +16,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
     <link rel="stylesheet" href="./css/styles.css" />
+    <title>Модальне вікно</title>
   </head>
   <body>
-    <!--Шапка сайта-->
     <header class="nav-main">
       <div class="container nav-menu">
         <a href="./index.html" class="logo logo-header link" lang="en"
@@ -28,7 +27,10 @@
 
         <nav>
           <ul class="nav-site list">
-            <li class="item"><a href="./index.html" class="link link-accent">Студія</a></li>
+            <li class="item"><a href="./index.html" class="link link-accent">Студія</a>
+            <div class="thumb-nav">
+                <div class="label-nav"></div>
+            </div></li>
             <li class="item"><a href="./portfolio.html" class="link">Портфоліо</a></li>
             <li class="item"><a href="#" class="link">Контакти</a></li>
           </ul>
@@ -57,7 +59,16 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="button primary">Замовити послугу</button>
+          <button data-modal-open type="button" class="button primary">Замовити послугу</button>
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+              <button class="modal-button">
+              <svg class="modal-icon" width="18" height="18" data-modal-close>
+                <use href="./images/icon/icon.svg#icon-close-black"></use></svg
+              >
+            </button>
+
+            </div></div>
         </div>
       </section>
 
@@ -121,34 +132,44 @@
       <!--Чим ми займаємося-->
       <section class="section section-features">
         <div class="container">
+            
           <h2 class="section-title">Чим ми займаємося</h2>
 
           <ul class="section-list list">
             <li>
+                <div class="thumb">
               <img
                 class="section-img"
                 src="./images/work/zan1.jpg"
                 alt="написання коду"
                 width="370"
               />
+              <p class="label">Десктопні додатки</p>
+              </div>
             </li>
 
             <li>
+                <div class="thumb">
               <img
                 class="section-img"
                 src="./images/work/zan2.jpg"
                 alt="розробка мобільних сайтів"
                 width="370"
               />
+              <p class="label">Мобільні додатки</p>
+                </div>
             </li>
 
             <li>
+                <div class="thumb">
               <img
                 class="section-img"
                 src="./images/work/zan3.jpg"
                 alt="графічний дизайн"
                 width="370"
               />
+              <p class="label">Дизайнерські рішення</p>
+                </div>
             </li>
           </ul>
         </div>
@@ -417,3 +438,6 @@
     </footer>
   </body>
 </html>
+<script src="./modal.js"></script>
+</body>
+
